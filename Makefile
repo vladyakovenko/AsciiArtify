@@ -18,4 +18,4 @@ windows:
 
 clean:
 	rm -rf ./bin/*
-	docker rmi $(IMAGE_TAG)
+	docker rmi myapp
