@@ -1,4 +1,4 @@
-.PHONY: all linux arm macos windows clean
+.PHONY: all linux arm macos windows image clean
 
 IMAGE_TAG := myapp
 
@@ -16,6 +16,9 @@ macos:
 windows:
 	GOOS=windows GOARCH=amd64 go build -o ./bin/myapp.exe main.go
 
+image:
+	docker build -t $(IMAGE_TAG) .
+
 clean:
 	rm -rf ./bin/*
-	docker rmi myapp:latest
+	docker rmi $(IMAGE_TAG)
