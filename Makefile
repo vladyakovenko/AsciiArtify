@@ -18,4 +18,4 @@ windows:
 
 clean:
 	rm -rf ./bin/*
-	docker rmi myapp
+	docker rmi myapp:latest
